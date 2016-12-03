@@ -1,0 +1,43 @@
+
+<ion-view view-title="新闻">
+    <ion-nav-buttons>
+        <div class="newsDiv"><img src="../img/logo.png"></div>
+        <!--<button class="button-clear"></button>-->
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a href="#/tabs/search" class="button button-clear ion-ios-search">搜</a>
+        <a href="#/tabs/direct-seeding" class="button button-clear ion-social-youtube">直</a>
+    </ion-nav-buttons>
+    <ion-header-bar class="bar-subheader">
+        <ion-scroll direction="x" scrollbar-x="false">
+            <div id="subheader">
+                <h3 ng-repeat="num in numArray">{{num}}</h3>
+            </div>
+        </ion-scroll>
+        <span class="icon ion-arrow-right-a"></span>
+    </ion-header-bar>
+
+
+    <ion-content >
+
+
+        <ion-scroll>
+            <ion-slide-box>
+                <ion-slide>
+                    <div class="box blue"><h1>BLUE</h1></div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box yellow"><h1>YELLOW</h1></div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box pink"><h1>PINK</h1></div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box blue"><h1>PINK</h1></div>
+                </ion-slide>
+            </ion-slide-box>
+        </ion-scroll>
+
+
+    </ion-content>
+</ion-view>

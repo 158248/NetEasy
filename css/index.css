@@ -1,0 +1,48 @@
+html{
+    font-size: 62.5%;
+}
+.newsDiv{
+    overflow: hidden;
+    width:10rem;
+}
+.newsDiv img{
+    width:10rem;
+    height: 3.5rem;
+    opacity: 0.8;
+}
+.seeding{
+    margin-top: 2.05rem;
+}
+.seeding a{
+    color: white;
+}
+.title{
+    display: inline-block;!important;
+}
+#subheader{
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 200rem;
+}
+#subheader h3{
+    margin-left: 30px;
+}
+.bar-subheader span{
+    display: flex;
+    align-items: center;
+}
+.box{
+    position: relative;
+    height: 30rem;
+}
+.blue{
+    background-color: blue;
+}
+.yellow{
+    background-color: yellow;
+}
+.pink{
+    background-color: pink;
+}

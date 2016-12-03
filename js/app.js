@@ -1,0 +1,55 @@
+/**
+ * Created by Administrator on 2016/11/30.
+ */
+angular.module('myApp',['ionic','myApp.newsC']).config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlRouterProvider) {
+    $stateProvider.state('tabs',{
+        url:'/tabs',
+        abstract:true,
+        templateUrl:'tabs.html'
+    }).state('tabs.login',{
+        url:'/login',
+        views:{
+            'tabs-main':{
+                templateUrl:"login.html"
+            }
+        }
+
+    }).state('tabs.news',{
+        url:'/news',
+        views:{
+            'tabs-news':{
+                templateUrl:'news.html',
+                controller:'newsController'
+            }
+        }
+    }).state('tabs.direct-seeding',{
+        url:'/direct-seeding',
+        views:{
+            'tabs-direct-seeding':{
+                templateUrl:'direct-seeding.html'
+            }
+        }
+    }).state('tabs.topic',{
+        url:'/topic',
+        views:{
+            'tabs-topic':{
+                templateUrl:'topic.html'
+            }
+        }
+    }).state('tabs.search',{
+        url:'/search',
+        views:{
+            'tabs-search':{
+                templateUrl:'search.html'
+            }
+        }
+    }).state('tabs.main',{
+        url:'/main',
+        views:{
+            'tabs-main':{
+                templateUrl:'main.html'
+            }
+        }
+    });
+    $urlRouterProvider.otherwise('tabs/news')
+}]);
