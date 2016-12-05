@@ -1,0 +1,113 @@
+html{
+    font-size: 62.5%;
+}
+.newsDiv{
+    overflow: hidden;
+    width:10rem;
+}
+.newsDiv img{
+    width:10rem;
+    height: 3.5rem;
+    opacity: 0.8;
+}
+.seeding{
+    margin-top: 2.05rem;
+}
+.seeding a{
+    color: white;
+}
+.title{
+    display: inline-block !important;
+}
+#subheader{
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 480rem;
+}
+#subheader h3{
+    margin-left: 30px;
+}
+.bar-subheader span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+}
+.header1{
+    display: none;
+    position: absolute;
+    z-index: 9;
+    background-color: white;
+}
+.header1 button{
+    margin-left: 3rem;
+    z-index: 11;
+    /*background-color: honeydew;*/
+    /*color: black;*/
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    width: 10rem;
+}
+#see button{
+    position: relative;
+    display: inline-block;
+    margin-left: 10rem;
+}
+.tabs-striped{
+    z-index: 999 !important;
+}
+/*轮播图*/
+
+.topCarousel{
+    position: relative;
+    /*width: calc(100% + 20px);*/
+    width: 100%;
+
+}
+.topCarousel .slider-pager{
+    text-align: right;
+    height: 3rem;
+}
+
+.topCarousel .slider-pager-page{
+    width: .1rem;
+}
+.topCarousel .ion-record{
+    position: relative;
+    bottom: -2rem;
+    right: 2rem;
+    display: block;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    background-color: white;
+}
+.slideBottomDiv{
+    position: absolute;
+    padding-left: 1.5rem;
+    bottom: .6rem;
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    height: 3rem;
+    background-color: rgba(0,0,0,.3);
+    color: white;
+}
+.popup-buttons{
+    border-top: solid 1px #d1d3d6;
+    padding: 0;
+    min-height: 0;
+}
+
+.popup-container .popup{
+    width: 300px;
+    border-radius: 6px;
+}
+.button.button-dark.button-clear{
+    border-right: solid 1px #d1d3d6;
+}
+.ion-record:before {
+    font-size: 0;
+}
