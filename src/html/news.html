@@ -1,8 +1,11 @@
 
 <ion-view view-title="新闻">
+    <ion-nav-bar class="bar-assertive nav-title-slide-ios7">
+        <ion-nav-back-button class="ion-android-arrow-back"></ion-nav-back-button>
+    </ion-nav-bar>
+
     <ion-nav-buttons>
         <div class="newsDiv"><img src="../images/logo.png"></div>
-        <!--<button class="button-clear"></button>-->
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
         <a href="#/tabs/search" class="button button-clear ion-ios-search">搜</a>
@@ -11,18 +14,78 @@
     <ion-header-bar class="bar-subheader">
         <ion-scroll direction="x" scrollbar-x="false">
             <div id="subheader">
-                <h3 ng-repeat="num in numArray1">{{num.tname}}</h3>
+                <h3 ng-repeat="num in numArray1"><span ng-click="top1($index)">{{num.tname}}</span></h3>
             </div>
         </ion-scroll>
         <span class=" icon ion-chevron-right" ng-click="add1()"></span>
     </ion-header-bar>
-    <ion-content>
-        <div class="header1">
-                        <button class="button button-calm" ng-repeat="num in numArray1">{{num.tname}}</button>
-        </div>
+    /*content*/
+    <ion-content on-drag="dragOpenSlide()">
+            <div class="header1">
+                <button class="button  badge-assertive " ng-repeat="num in numArray1">{{num.tname}}</button>
+            </div>
+
+        <ion-slide-box show-pager="false" style="margin-top: -20px" delegate-handle="mainSlideBox" on-slide-changed="slideChanged($index)">
+            <ion-slide>
+        <div style="height: 20px"></div>
+
+
         <mg-slide-box source-array="news.newsListArray"></mg-slide-box>
 
+        <ion-refresher
+                pulling-icon="circles"
+                on-refresh="doRefresh()"
+                spinner="lines"
+                refreshing-text="正在刷新...">
+        </ion-refresher>
+        <ion-list  class="list">
+            <ion-item ng-repeat="item in items" class="item item-thumbnail-left" ng-click="detail($index)">
+                            <img ng-src="{{item.imgsrc}}" alt="">
+                            <span class="item-text-wrap">{{item.title}}</span>
+                            <p>{{item.interest}}</p>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll
+                on-infinite="loadMore()"
+                distance="1%"
+                spinner="android"
+                icon="ion-loop"
+                immediate-check="true"
+                ng-if="isShowInfinite">
+        </ion-infinite-scroll>
+        <button ng-click="scrollTop()">滚动到顶部!</button>
+            </ion-slide>
 
+            <!--<ion-slide>-->
+                <!--<div class="header1">-->
+                    <!--<button class="button  badge-assertive" ng-repeat="num in numArray1">{{num.tname}}</button>-->
+                <!--</div>-->
+                <!--<mg-slide-box source-array="news.newsListArray1"></mg-slide-box>-->
+                <!--<ion-refresher-->
+                        <!--pulling-text="下拉刷新..."-->
+                        <!--on-refresh="doRefresh()"-->
+                        <!--on-pulling="doSome()"-->
+                        <!--spinner="lines"-->
+                        <!--refreshing-text="正在刷新...">>-->
+                <!--</ion-refresher>-->
+                <!--<ion-list  class="list">-->
+                    <!--<ion-item ng-repeat="item1 in items1" class="item item-thumbnail-left" ng-click="detail()">-->
+                        <!--<img ng-src="{{item1.imgsrc}}" alt="">-->
+                        <!--<span class="item-text-wrap">{{item1.title}}</span>-->
+                        <!--<p>{{item1.interest}}</p>-->
+                    <!--</ion-item>-->
+                <!--</ion-list>-->
+                <!--<ion-infinite-scroll-->
+                        <!--on-infinite="loadMore()"-->
+                        <!--distance="1%"-->
+                        <!--spinner="android"-->
+                        <!--icon="ion-loop"-->
+                        <!--immediate-check="true"-->
+                        <!--ng-if="isShowInfinite">-->
+                <!--</ion-infinite-scroll>-->
+                <!--<button ng-click="scrollTop1()">滚动到顶部!</button>-->
 
+            <!--</ion-slide>-->
+        </ion-slide-box>
     </ion-content>
 </ion-view>

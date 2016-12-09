@@ -15,7 +15,7 @@ angular.module('myApp.Factory',['ionic']).factory('HttpFactory',['$http','$q',fu
                 }).then(function (result) {
                     result = result.data;
                     // console.log(result)
-                    result = result[Object.keys(result)[0]];
+                    // result = result[Object.keys(result)[0]];
                     // console.log(result)
                     promise.resolve(result);
                 },function (err) {

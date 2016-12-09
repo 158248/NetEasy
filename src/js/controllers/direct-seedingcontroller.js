@@ -11,7 +11,7 @@ angular.module('myApp.direct-seedingC',['ionic']).config(['$stateProvider',funct
             }
         }
     });
-}]).controller('direct-seedingController',['$scope',function ($scope) {
+}]).controller('direct-seedingController',['$scope','HttpFactory',function ($scope,HttpFactory) {
     $scope.liveTopStyle1 = {
         'color':'black'
     };
@@ -48,5 +48,23 @@ angular.module('myApp.direct-seedingC',['ionic']).config(['$stateProvider',funct
             'color':'black'
         };
     };
+
+
+    $scope.news = {
+        newsListArray:[]
+    };
+    var url = 'http://data.live.126.net/livechannel/previewlist.json';
+    HttpFactory.getData(url).then(function (result) {
+
+
+        $scope.news.newsListArray = result.top;
+        $scope.videos = result.live_review;
+        $scope.headerArray = result.sublives;
+        $scope.animas = result.future;
+        console.log(result.future);
+
+
+
+    });
 
 }]);

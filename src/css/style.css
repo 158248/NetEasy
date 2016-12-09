@@ -30,13 +30,17 @@ html{
     margin-left: 30px;
 }
 .bar-subheader span{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    position: relative;
+    margin-top: 1.3rem;
+    margin-left: 1.1rem;
     width: 150px;
 }
 .header1{
     display: none;
+
     position: absolute;
     z-index: 9;
     background-color: white;
@@ -59,7 +63,23 @@ html{
     z-index: 999 !important;
 }
 /*轮播图*/
+@media all and (max-width: 480px){
 
+    .topCarouselImg{
+        height: 18rem;
+        width: 100%;
+    }
+}
+@media all and (min-width: 480px){
+    .topCarouselImg{
+        height: 24rem;
+        width: 100%;
+    }
+    /*.view-container{*/
+    /*width: 48rem;*/
+    /*}*/
+
+}
 .topCarousel{
     position: relative;
     /*width: calc(100% + 20px);*/
@@ -110,4 +130,85 @@ html{
 }
 .ion-record:before {
     font-size: 0;
+}
+.dadail img{
+  width:100%;
+}
+/*新闻列表*/
+.list p {
+    position: fixed;
+    margin-top: 25px;
+}
+/*搜素*/
+#earch input{
+    background: url("../images/sprite_img0803.png") no-repeat;
+    background-position: right;
+}
+/*话题*/
+.card {
+    height: 85px;
+}
+.card .button img{
+    width: 50%;
+    height: 30px;
+}
+.card .button{
+    margin-left: 15px;
+    width: 20%;
+    height: 70px;
+    margin-top: 5px;
+}
+
+/*直播*/
+#subheader1{
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 233rem;
+}
+#subheader1 div{
+    width: 80px;
+    /*height: 60px;*/
+    margin-left: 3px;
+}
+#subheader1 div img{
+    border-radius:30px;
+    box-shadow: 3px 3px 3px gray;
+    width: 80%;
+}
+.list p:nth-child(n){
+    position: absolute;
+    color: white;
+}
+.list p:nth-child(2){
+    margin-top: 96px;
+    margin-left: 30px;
+}
+.list .p {
+
+    margin-top: 86px;
+}
+.anim {
+    height: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.anim li{
+    animation: dong 13s infinite;
+}
+@keyframes dong {
+    0%{ transform: translateY(0);}
+    10%{ transform: translateY(-20px);}
+    20%{ transform: translateY(-40px);}
+    30%{ transform: translateY(-60px);}
+    40%{ transform: translateY(-80px);}
+    50%{ transform: translateY(-100px);}
+    60%{ transform: translateY(-80px);}
+    70%{ transform: translateY(-60px);}
+    80%{ transform: translateY(-40px);}
+    90%{ transform: translateY(-20px);}
+    100%{ transform: translateY(0px);}
+
 }

@@ -13,8 +13,16 @@ angular.module('myApp.slideBox',[]).directive('mgSlideBox',[function () {
             var lastSpan = $element[0].lastChild;
             $scope.$watch('sourceArray', function (newVal, oldVal) {
                 if (newVal && newVal.length) {
-                    $ionicSlideBoxDelegate.$getByHandle('topCarouselSlideBox').update();
+                    // $ionicSlideBoxDelegate.$getByHandle('topCarouselSlideBox').update();
+                    $scope.ishowSlideBox = true;
                     lastSpan.innerText = ($scope.sourceArray[0]).title;
+                    $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
+                    $scope.drag = function (event) {
+                      $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
+                        // console.log('拖拽轮播图')
+                        event.stopPropagation();
+                    };
+
                     $scope.slideHasChanged = function (index) {
                         lastSpan.innerText = $scope.sourceArray[index].title;
                     }

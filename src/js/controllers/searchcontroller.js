@@ -5,7 +5,7 @@ angular.module('myApp.searchC',['ionic']).config(['$stateProvider',function ($st
     $stateProvider.state('tabs.search',{
         url:'/search',
         views:{
-            'tabs-search':{
+            'tabs-news':{
                 templateUrl:'search.html'
             }
         }
